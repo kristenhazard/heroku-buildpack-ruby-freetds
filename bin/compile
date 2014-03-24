@@ -5,7 +5,7 @@ $stdout.sync = true
 
 puts "Installing freetds into #{ARGV[0]}/vendor/freetds"
 puts `mkdir -p #{ARGV[0]}/vendor/freetds`
-puts `curl https://s3-us-west-2.amazonaws.com/twaggs/test/freetds.tgz -o - | tar -xz -C #{ARGV[0]}/vendor/freetds -f -`
+puts `curl https://s3.amazonaws.com/firmhouse/freetds-0.tgz -o - | tar -xz -C #{ARGV[0]}/vendor/freetds -f -`
 
 ENV['LD_LIBRARY_PATH'] = "#{ARGV[0]}/vendor/freetds/lib:$LIBRARY_PATH"
 ENV['LIBRARY_PATH'] = "#{ARGV[0]}/vendor/freetds/lib:$LIBRARY_PATH"
